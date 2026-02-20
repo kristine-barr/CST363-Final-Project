@@ -1,0 +1,601 @@
+category_id,category_name,user_id
+1,Currently Reading,1
+2,Want to Read,1
+3,Favorites,1
+4,Currently Reading,2
+5,Want to Read,2
+6,Favorites,2
+7,Currently Reading,3
+8,Want to Read,3
+9,Favorites,3
+10,Currently Reading,4
+11,Want to Read,4
+12,Favorites,4
+13,Currently Reading,5
+14,Want to Read,5
+15,Favorites,5
+16,Currently Reading,6
+17,Want to Read,6
+18,Favorites,6
+19,Currently Reading,7
+20,Want to Read,7
+21,Favorites,7
+22,Currently Reading,8
+23,Want to Read,8
+24,Favorites,8
+25,Currently Reading,9
+26,Want to Read,9
+27,Favorites,9
+28,Currently Reading,10
+29,Want to Read,10
+30,Favorites,10
+31,Currently Reading,11
+32,Want to Read,11
+33,Favorites,11
+34,Currently Reading,12
+35,Want to Read,12
+36,Favorites,12
+37,Currently Reading,13
+38,Want to Read,13
+39,Favorites,13
+40,Currently Reading,14
+41,Want to Read,14
+42,Favorites,14
+43,Currently Reading,15
+44,Want to Read,15
+45,Favorites,15
+46,Currently Reading,16
+47,Want to Read,16
+48,Favorites,16
+49,Currently Reading,17
+50,Want to Read,17
+51,Favorites,17
+52,Currently Reading,18
+53,Want to Read,18
+54,Favorites,18
+55,Currently Reading,19
+56,Want to Read,19
+57,Favorites,19
+58,Currently Reading,20
+59,Want to Read,20
+60,Favorites,20
+61,Currently Reading,21
+62,Want to Read,21
+63,Favorites,21
+64,Currently Reading,22
+65,Want to Read,22
+66,Favorites,22
+67,Currently Reading,23
+68,Want to Read,23
+69,Favorites,23
+70,Currently Reading,24
+71,Want to Read,24
+72,Favorites,24
+73,Currently Reading,25
+74,Want to Read,25
+75,Favorites,25
+76,Currently Reading,26
+77,Want to Read,26
+78,Favorites,26
+79,Currently Reading,27
+80,Want to Read,27
+81,Favorites,27
+82,Currently Reading,28
+83,Want to Read,28
+84,Favorites,28
+85,Currently Reading,29
+86,Want to Read,29
+87,Favorites,29
+88,Currently Reading,30
+89,Want to Read,30
+90,Favorites,30
+91,Currently Reading,31
+92,Want to Read,31
+93,Favorites,31
+94,Currently Reading,32
+95,Want to Read,32
+96,Favorites,32
+97,Currently Reading,33
+98,Want to Read,33
+99,Favorites,33
+100,Currently Reading,34
+101,Want to Read,34
+102,Favorites,34
+103,Currently Reading,35
+104,Want to Read,35
+105,Favorites,35
+106,Currently Reading,36
+107,Want to Read,36
+108,Favorites,36
+109,Currently Reading,37
+110,Want to Read,37
+111,Favorites,37
+112,Currently Reading,38
+113,Want to Read,38
+114,Favorites,38
+115,Currently Reading,39
+116,Want to Read,39
+117,Favorites,39
+118,Currently Reading,40
+119,Want to Read,40
+120,Favorites,40
+121,Currently Reading,41
+122,Want to Read,41
+123,Favorites,41
+124,Currently Reading,42
+125,Want to Read,42
+126,Favorites,42
+127,Currently Reading,43
+128,Want to Read,43
+129,Favorites,43
+130,Currently Reading,44
+131,Want to Read,44
+132,Favorites,44
+133,Currently Reading,45
+134,Want to Read,45
+135,Favorites,45
+136,Currently Reading,46
+137,Want to Read,46
+138,Favorites,46
+139,Currently Reading,47
+140,Want to Read,47
+141,Favorites,47
+142,Currently Reading,48
+143,Want to Read,48
+144,Favorites,48
+145,Currently Reading,49
+146,Want to Read,49
+147,Favorites,49
+148,Currently Reading,50
+149,Want to Read,50
+150,Favorites,50
+151,Currently Reading,51
+152,Want to Read,51
+153,Favorites,51
+154,Currently Reading,52
+155,Want to Read,52
+156,Favorites,52
+157,Currently Reading,53
+158,Want to Read,53
+159,Favorites,53
+160,Currently Reading,54
+161,Want to Read,54
+162,Favorites,54
+163,Currently Reading,55
+164,Want to Read,55
+165,Favorites,55
+166,Currently Reading,56
+167,Want to Read,56
+168,Favorites,56
+169,Currently Reading,57
+170,Want to Read,57
+171,Favorites,57
+172,Currently Reading,58
+173,Want to Read,58
+174,Favorites,58
+175,Currently Reading,59
+176,Want to Read,59
+177,Favorites,59
+178,Currently Reading,60
+179,Want to Read,60
+180,Favorites,60
+181,Currently Reading,61
+182,Want to Read,61
+183,Favorites,61
+184,Currently Reading,62
+185,Want to Read,62
+186,Favorites,62
+187,Currently Reading,63
+188,Want to Read,63
+189,Favorites,63
+190,Currently Reading,64
+191,Want to Read,64
+192,Favorites,64
+193,Currently Reading,65
+194,Want to Read,65
+195,Favorites,65
+196,Currently Reading,66
+197,Want to Read,66
+198,Favorites,66
+199,Currently Reading,67
+200,Want to Read,67
+201,Favorites,67
+202,Currently Reading,68
+203,Want to Read,68
+204,Favorites,68
+205,Currently Reading,69
+206,Want to Read,69
+207,Favorites,69
+208,Currently Reading,70
+209,Want to Read,70
+210,Favorites,70
+211,Currently Reading,71
+212,Want to Read,71
+213,Favorites,71
+214,Currently Reading,72
+215,Want to Read,72
+216,Favorites,72
+217,Currently Reading,73
+218,Want to Read,73
+219,Favorites,73
+220,Currently Reading,74
+221,Want to Read,74
+222,Favorites,74
+223,Currently Reading,75
+224,Want to Read,75
+225,Favorites,75
+226,Currently Reading,76
+227,Want to Read,76
+228,Favorites,76
+229,Currently Reading,77
+230,Want to Read,77
+231,Favorites,77
+232,Currently Reading,78
+233,Want to Read,78
+234,Favorites,78
+235,Currently Reading,79
+236,Want to Read,79
+237,Favorites,79
+238,Currently Reading,80
+239,Want to Read,80
+240,Favorites,80
+241,Currently Reading,81
+242,Want to Read,81
+243,Favorites,81
+244,Currently Reading,82
+245,Want to Read,82
+246,Favorites,82
+247,Currently Reading,83
+248,Want to Read,83
+249,Favorites,83
+250,Currently Reading,84
+251,Want to Read,84
+252,Favorites,84
+253,Currently Reading,85
+254,Want to Read,85
+255,Favorites,85
+256,Currently Reading,86
+257,Want to Read,86
+258,Favorites,86
+259,Currently Reading,87
+260,Want to Read,87
+261,Favorites,87
+262,Currently Reading,88
+263,Want to Read,88
+264,Favorites,88
+265,Currently Reading,89
+266,Want to Read,89
+267,Favorites,89
+268,Currently Reading,90
+269,Want to Read,90
+270,Favorites,90
+271,Currently Reading,91
+272,Want to Read,91
+273,Favorites,91
+274,Currently Reading,92
+275,Want to Read,92
+276,Favorites,92
+277,Currently Reading,93
+278,Want to Read,93
+279,Favorites,93
+280,Currently Reading,94
+281,Want to Read,94
+282,Favorites,94
+283,Currently Reading,95
+284,Want to Read,95
+285,Favorites,95
+286,Currently Reading,96
+287,Want to Read,96
+288,Favorites,96
+289,Currently Reading,97
+290,Want to Read,97
+291,Favorites,97
+292,Currently Reading,98
+293,Want to Read,98
+294,Favorites,98
+295,Currently Reading,99
+296,Want to Read,99
+297,Favorites,99
+298,Currently Reading,100
+299,Want to Read,100
+300,Favorites,100
+301,Currently Reading,101
+302,Want to Read,101
+303,Favorites,101
+304,Currently Reading,102
+305,Want to Read,102
+306,Favorites,102
+307,Currently Reading,103
+308,Want to Read,103
+309,Favorites,103
+310,Currently Reading,104
+311,Want to Read,104
+312,Favorites,104
+313,Currently Reading,105
+314,Want to Read,105
+315,Favorites,105
+316,Currently Reading,106
+317,Want to Read,106
+318,Favorites,106
+319,Currently Reading,107
+320,Want to Read,107
+321,Favorites,107
+322,Currently Reading,108
+323,Want to Read,108
+324,Favorites,108
+325,Currently Reading,109
+326,Want to Read,109
+327,Favorites,109
+328,Currently Reading,110
+329,Want to Read,110
+330,Favorites,110
+331,Currently Reading,111
+332,Want to Read,111
+333,Favorites,111
+334,Currently Reading,112
+335,Want to Read,112
+336,Favorites,112
+337,Currently Reading,113
+338,Want to Read,113
+339,Favorites,113
+340,Currently Reading,114
+341,Want to Read,114
+342,Favorites,114
+343,Currently Reading,115
+344,Want to Read,115
+345,Favorites,115
+346,Currently Reading,116
+347,Want to Read,116
+348,Favorites,116
+349,Currently Reading,117
+350,Want to Read,117
+351,Favorites,117
+352,Currently Reading,118
+353,Want to Read,118
+354,Favorites,118
+355,Currently Reading,119
+356,Want to Read,119
+357,Favorites,119
+358,Currently Reading,120
+359,Want to Read,120
+360,Favorites,120
+361,Currently Reading,121
+362,Want to Read,121
+363,Favorites,121
+364,Currently Reading,122
+365,Want to Read,122
+366,Favorites,122
+367,Currently Reading,123
+368,Want to Read,123
+369,Favorites,123
+370,Currently Reading,124
+371,Want to Read,124
+372,Favorites,124
+373,Currently Reading,125
+374,Want to Read,125
+375,Favorites,125
+376,Currently Reading,126
+377,Want to Read,126
+378,Favorites,126
+379,Currently Reading,127
+380,Want to Read,127
+381,Favorites,127
+382,Currently Reading,128
+383,Want to Read,128
+384,Favorites,128
+385,Currently Reading,129
+386,Want to Read,129
+387,Favorites,129
+388,Currently Reading,130
+389,Want to Read,130
+390,Favorites,130
+391,Currently Reading,131
+392,Want to Read,131
+393,Favorites,131
+394,Currently Reading,132
+395,Want to Read,132
+396,Favorites,132
+397,Currently Reading,133
+398,Want to Read,133
+399,Favorites,133
+400,Currently Reading,134
+401,Want to Read,134
+402,Favorites,134
+403,Currently Reading,135
+404,Want to Read,135
+405,Favorites,135
+406,Currently Reading,136
+407,Want to Read,136
+408,Favorites,136
+409,Currently Reading,137
+410,Want to Read,137
+411,Favorites,137
+412,Currently Reading,138
+413,Want to Read,138
+414,Favorites,138
+415,Currently Reading,139
+416,Want to Read,139
+417,Favorites,139
+418,Currently Reading,140
+419,Want to Read,140
+420,Favorites,140
+421,Currently Reading,141
+422,Want to Read,141
+423,Favorites,141
+424,Currently Reading,142
+425,Want to Read,142
+426,Favorites,142
+427,Currently Reading,143
+428,Want to Read,143
+429,Favorites,143
+430,Currently Reading,144
+431,Want to Read,144
+432,Favorites,144
+433,Currently Reading,145
+434,Want to Read,145
+435,Favorites,145
+436,Currently Reading,146
+437,Want to Read,146
+438,Favorites,146
+439,Currently Reading,147
+440,Want to Read,147
+441,Favorites,147
+442,Currently Reading,148
+443,Want to Read,148
+444,Favorites,148
+445,Currently Reading,149
+446,Want to Read,149
+447,Favorites,149
+448,Currently Reading,150
+449,Want to Read,150
+450,Favorites,150
+451,Currently Reading,151
+452,Want to Read,151
+453,Favorites,151
+454,Currently Reading,152
+455,Want to Read,152
+456,Favorites,152
+457,Currently Reading,153
+458,Want to Read,153
+459,Favorites,153
+460,Currently Reading,154
+461,Want to Read,154
+462,Favorites,154
+463,Currently Reading,155
+464,Want to Read,155
+465,Favorites,155
+466,Currently Reading,156
+467,Want to Read,156
+468,Favorites,156
+469,Currently Reading,157
+470,Want to Read,157
+471,Favorites,157
+472,Currently Reading,158
+473,Want to Read,158
+474,Favorites,158
+475,Currently Reading,159
+476,Want to Read,159
+477,Favorites,159
+478,Currently Reading,160
+479,Want to Read,160
+480,Favorites,160
+481,Currently Reading,161
+482,Want to Read,161
+483,Favorites,161
+484,Currently Reading,162
+485,Want to Read,162
+486,Favorites,162
+487,Currently Reading,163
+488,Want to Read,163
+489,Favorites,163
+490,Currently Reading,164
+491,Want to Read,164
+492,Favorites,164
+493,Currently Reading,165
+494,Want to Read,165
+495,Favorites,165
+496,Currently Reading,166
+497,Want to Read,166
+498,Favorites,166
+499,Currently Reading,167
+500,Want to Read,167
+501,Favorites,167
+502,Currently Reading,168
+503,Want to Read,168
+504,Favorites,168
+505,Currently Reading,169
+506,Want to Read,169
+507,Favorites,169
+508,Currently Reading,170
+509,Want to Read,170
+510,Favorites,170
+511,Currently Reading,171
+512,Want to Read,171
+513,Favorites,171
+514,Currently Reading,172
+515,Want to Read,172
+516,Favorites,172
+517,Currently Reading,173
+518,Want to Read,173
+519,Favorites,173
+520,Currently Reading,174
+521,Want to Read,174
+522,Favorites,174
+523,Currently Reading,175
+524,Want to Read,175
+525,Favorites,175
+526,Currently Reading,176
+527,Want to Read,176
+528,Favorites,176
+529,Currently Reading,177
+530,Want to Read,177
+531,Favorites,177
+532,Currently Reading,178
+533,Want to Read,178
+534,Favorites,178
+535,Currently Reading,179
+536,Want to Read,179
+537,Favorites,179
+538,Currently Reading,180
+539,Want to Read,180
+540,Favorites,180
+541,Currently Reading,181
+542,Want to Read,181
+543,Favorites,181
+544,Currently Reading,182
+545,Want to Read,182
+546,Favorites,182
+547,Currently Reading,183
+548,Want to Read,183
+549,Favorites,183
+550,Currently Reading,184
+551,Want to Read,184
+552,Favorites,184
+553,Currently Reading,185
+554,Want to Read,185
+555,Favorites,185
+556,Currently Reading,186
+557,Want to Read,186
+558,Favorites,186
+559,Currently Reading,187
+560,Want to Read,187
+561,Favorites,187
+562,Currently Reading,188
+563,Want to Read,188
+564,Favorites,188
+565,Currently Reading,189
+566,Want to Read,189
+567,Favorites,189
+568,Currently Reading,190
+569,Want to Read,190
+570,Favorites,190
+571,Currently Reading,191
+572,Want to Read,191
+573,Favorites,191
+574,Currently Reading,192
+575,Want to Read,192
+576,Favorites,192
+577,Currently Reading,193
+578,Want to Read,193
+579,Favorites,193
+580,Currently Reading,194
+581,Want to Read,194
+582,Favorites,194
+583,Currently Reading,195
+584,Want to Read,195
+585,Favorites,195
+586,Currently Reading,196
+587,Want to Read,196
+588,Favorites,196
+589,Currently Reading,197
+590,Want to Read,197
+591,Favorites,197
+592,Currently Reading,198
+593,Want to Read,198
+594,Favorites,198
+595,Currently Reading,199
+596,Want to Read,199
+597,Favorites,199
+598,Currently Reading,200
+599,Want to Read,200
+600,Favorites,200
