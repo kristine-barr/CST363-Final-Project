@@ -3,5 +3,5 @@
 
 CREATE TABLE IF NOT EXISTS author (
     author_id serial PRIMARY KEY,
-    author_name VARCHAR(255) NOT NULL UNIQUE
+    author_name VARCHAR(255) NOT NULL
 );
