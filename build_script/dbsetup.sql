@@ -208,6 +208,7 @@ ALTER TABLE ONLY public.user_role ALTER COLUMN role_id SET DEFAULT nextval('publ
 
 -- load data into tables
 \echo '\nLoading data into tables.\n'
+
 -- app_user (200 rows) from app_user.csv
 INSERT INTO public."app_user" ("user_id", "first_name", "last_name", "email", "role_id") VALUES
   (1, 'Lucas', 'Garcia', 'lucas.garcia.1.36537b@example.com', 2),
@@ -410,6 +411,13 @@ INSERT INTO public."app_user" ("user_id", "first_name", "last_name", "email", "r
   (198, 'Julian', 'King', 'julian.king.198.095778@example.com', 2),
   (199, 'Levi', 'Garcia', 'levi.garcia.199.7cd44a@example.com', 2),
   (200, 'Liam', 'Campbell', 'liam.campbell.200.6ac248@example.com', 2);
+
+-- insert users with no categories.
+INSERT INTO public.app_user (user_id, first_name, last_name, email, role_id)
+VALUES
+    (201,'Alice', 'Test', 'alice.test@example.com', 2),
+    (202,'Bob', 'Test', 'bob.test@example.com', 2),
+    (203,'Charlie', 'Test', 'charlie.test@example.com', 2);
 
 -- author (320 rows) from author.csv
 INSERT INTO public."author" ("author_id", "author_name") VALUES
@@ -7306,7 +7314,7 @@ INSERT INTO public."category" ("category_id", "category_name", "user_id") VALUES
 
 -- end data inserts.
 
-\echo '\nrequence the tables pks.\n'
+\echo '\nresequence the tables pks.\n'
 -- resequence the pk after the inserts.
 -- public.app_user.user_id -> public.app_user_user_id_seq
 SELECT setval('public.app_user_user_id_seq', COALESCE((SELECT MAX(user_id) FROM public.app_user), 0), true);
@@ -7399,8 +7407,85 @@ FOREIGN KEY (user_id)
 REFERENCES app_user(user_id)
     ON DELETE CASCADE;
 
--- add indexs
+-- add index's
+\echo 'Adding index''s.\n'
+-- Creates index on app_user.role_id for improved query performance when query the users role
 CREATE INDEX IF NOT EXISTS idx_app_user_role_id ON app_user(role_id);
+
+-- Creates index on app_user(last_name, first_name) for improved query performance when query the users full name.
+CREATE INDEX IF NOT EXISTS idx_app_user_last_first
+    ON app_user(last_name, first_name);
+
+-- Creates index on author_name column in author table to improve query performance when searching by author name.
+CREATE INDEX IF NOT EXISTS idx_author_author_name
+    ON author (author_name);
+
+-- Queries
+\echo '\nRunning queries \n'
+-- This query joins the app_user and user_role tables using the role_id foreign key to display each user along with
+-- their assigned role. The results are sorted by last name and first name to make the list easier to read.
+SELECT
+    u.first_name,
+    u.last_name,
+    u.email,
+    r.role_name
+FROM app_user u
+         JOIN user_role r
+              ON u.role_id = r.role_id
+ORDER BY u.last_name, u.first_name;
+
+-- This query counts how many users are assigned to each role. It uses LEFT JOIN to include all roles, even if no
+-- users are currently assigned to them. The results are grouped by role name and sorted from highest to lowest
+-- number of users.
+SELECT
+    r.role_name,
+    COUNT(u.user_id) AS total_users
+FROM user_role r LEFT JOIN app_user u
+    ON u.role_id = r.role_id
+GROUP BY r.role_name
+ORDER BY total_users DESC;
+
+-- The query returns all genres that have more than three distinct books published between 2000 and 2015. The query
+-- groups the books by genre, counts how many unique books fall within that time range for each genre, and filters out
+-- book genres with less than three books. Finally, the query orders the results from most to least.
+SELECT
+    g.genre_name,
+    COUNT(DISTINCT b.book_id) AS book_count
+FROM book b INNER JOIN book_genre bg
+    on b.book_id = bg.book_id
+inner join genre g
+    ON bg.genre_id = g.genre_id
+WHERE b.publish_date BETWEEN '2000' AND '2015'
+GROUP BY g.genre_name
+HAVING COUNT(DISTINCT b.book_id) > 3
+ORDER BY book_count DESC;
+
+
+-- This query identifies users who have not created any book categories by selecting users whose user id does not appear in the category table.
+SELECT
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email
+FROM app_user u
+WHERE u.user_id NOT IN (
+    SELECT c.user_id
+    FROM category c
+    WHERE c.user_id IS NOT NULL
+);
+
+-- This query JOINS the book, author, and publisher table based on their ‘author_id’. The goal of this query is to find
+-- any books in our database where the ‘author_name’ is “Stephen King’. It will also organize them by their book title,
+-- publish date, and the publisher_name for clarity in the event of duplications or multiple publishers.
+SELECT
+    b.title,
+    b.publish_date,
+    p.publisher_name
+FROM book b
+JOIN author a ON b.author_id = a.author_id
+JOIN publisher p ON b.publisher_id = p.publisher_id
+WHERE a.author_name = 'Stephen King';
+
 --
 -- PostgreSQL database dump complete
 --
