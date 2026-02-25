@@ -6636,7 +6636,8 @@ INSERT INTO public."book" ("book_id", "title", "publish_date", "author_id", "pub
   (1397, 'Hidden Kite of Glass #1397', '1991-04-10', 19, 13),
   (1398, 'Restless Crown #1398', '1989-04-23', 69, 39),
   (1399, 'Emerald Archive #1399', '1994-11-20', 66, 40),
-  (1400, 'Iron Library of Honey #1400', '2004-04-02', 84, 26);
+  (1400, 'Iron Library of Honey #1400', '2004-04-02', 84, 26),
+  (1401, 'Salem''s Lot', '2005-01-12', 321, 26 );
 
 -- genre (16 rows) from genre.csv
 INSERT INTO public."genre" ("genre_id", "genre_name") VALUES
@@ -7312,7 +7313,8 @@ INSERT INTO public."category" ("category_id", "category_name", "user_id") VALUES
   (597, 'Favorites', 199),
   (598, 'Currently Reading', 200),
   (599, 'Want to Read', 200),
-  (600, 'Favorites', 200);
+  (600, 'Favorites', 200),
+  (601, 'Favorites', 200);
 
 -- end data inserts.
 
