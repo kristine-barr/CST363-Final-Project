@@ -17,7 +17,6 @@ SET idle_in_transaction_session_timeout = 0;
 SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
@@ -31,10 +30,12 @@ SET default_table_access_method = heap;
 \c postgres
 DROP DATABASE IF EXISTS bookshelf;
 CREATE DATABASE bookshelf;
+GRANT CREATE ON SCHEMA public TO postgres;
 \c bookshelf
 
+-- set the search path to public help unqualified table names resolve in the script.
+SET search_path = pg_catalog, public;
 
-GRANT CREATE ON SCHEMA public TO postgres;
 
 -- Name: app_user; Type: TABLE; Schema: public; Owner: postgres
 --
@@ -62,7 +63,7 @@ ALTER SEQUENCE public.app_user_user_id_seq OWNED BY public.app_user.user_id;
 --
 
 
-CREATE TABLE IF NOT EXISTS author (
+CREATE TABLE IF NOT EXISTS public.author (
     author_id serial PRIMARY KEY,
     author_name VARCHAR(255) NOT NULL
 );
@@ -74,7 +75,7 @@ ALTER TABLE public.author OWNER TO postgres;
 -- Name: book; Type: TABLE; Schema: public; Owner: postgres
 --
 --
-create table book(
+create table public.book(
     book_id serial primary key,
     title varchar(255),
     publish_date varchar(50),
@@ -111,7 +112,7 @@ ALTER TABLE public.book_genre OWNER TO postgres;
 -- Name: category; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE IF NOT EXISTS category (
+CREATE TABLE IF NOT EXISTS public.category (
     category_id serial PRIMARY KEY,
     category_name VARCHAR(255) NOT NULL,
     user_id INT NOT NULL,
@@ -126,7 +127,7 @@ ALTER SEQUENCE public.category_category_id_seq OWNED BY public.category.category
 --
 -- Name: genre; Type: TABLE; Schema: public; Owner: postgres
 --
-create table genre(
+create table public.genre(
     genre_id serial primary key,
     genre_name varchar(255) not null unique
 );
@@ -139,7 +140,7 @@ ALTER SEQUENCE public.genre_genre_id_seq OWNED BY public.genre.genre_id;
 -- Name: publisher; Type: TABLE; Schema: public; Owner: postgres
 --
 
-create table publisher(
+create table public.publisher(
     publisher_id serial primary key,
     publisher_name varchar(255) not null unique
 );
@@ -149,7 +150,7 @@ ALTER TABLE public.publisher OWNER TO postgres;
 -- Name: user_role; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE IF NOT EXISTS user_role (
+CREATE TABLE IF NOT EXISTS public.user_role (
     role_id SERIAL PRIMARY KEY,
     role_name VARCHAR(255) NOT NULL UNIQUE
 );
@@ -740,7 +741,8 @@ INSERT INTO public."author" ("author_id", "author_name") VALUES
   (317, 'Liam Wilson'),
   (318, 'Julian Edwards'),
   (319, 'Lucas Kim'),
-  (320, 'Levi Evans');
+  (320, 'Levi Evans'),
+  (321, 'Stephen King');
 
 -- book_category (2515 rows) from book_category.csv
 INSERT INTO public."book_category" ("category_id", "book_id") VALUES
@@ -7338,87 +7340,87 @@ SELECT setval('public.publisher_publisher_id_seq', COALESCE((SELECT MAX(publishe
 SELECT setval('public.user_role_role_id_seq', COALESCE((SELECT MAX(role_id) FROM public.user_role), 0), true);
 
 -- fk and constraints.
-ALTER TABLE app_user
+ALTER TABLE public.app_user
 ADD CONSTRAINT fk_app_user_role
 FOREIGN KEY (role_id)
-REFERENCES user_role(role_id)
+REFERENCES public.user_role(role_id)
 ON DELETE RESTRICT;
 
-ALTER TABLE book
+ALTER TABLE public.book
   DROP CONSTRAINT IF EXISTS fk_book_author;
 
-ALTER TABLE book
+ALTER TABLE public.book
   ADD CONSTRAINT fk_book_author
   FOREIGN KEY (author_id)
-  REFERENCES author(author_id);
+  REFERENCES public.author(author_id);
 
-ALTER TABLE book
+ALTER TABLE public.book
   DROP CONSTRAINT IF EXISTS fk_book_publisher;
 
-ALTER TABLE book
+ALTER TABLE public.book
   ADD CONSTRAINT fk_book_publisher
   FOREIGN KEY (publisher_id)
-  REFERENCES publisher(publisher_id);
+  REFERENCES public.publisher(publisher_id);
 
 
-ALTER TABLE book_category
+ALTER TABLE public.book_category
     DROP CONSTRAINT IF EXISTS pk_book_category;
 
-ALTER TABLE book_category
+ALTER TABLE public.book_category
     ADD CONSTRAINT pk_book_category
     PRIMARY KEY (book_id, category_id);
 
-ALTER TABLE book_category
+ALTER TABLE public.book_category
     DROP CONSTRAINT IF EXISTS fk_book_category_book;
 
-ALTER TABLE book_category
+ALTER TABLE public.book_category
     ADD CONSTRAINT fk_book_category_book
     FOREIGN KEY (book_id)
-    REFERENCES book(book_id);
+    REFERENCES public.book(book_id);
 
-ALTER TABLE book_category
+ALTER TABLE public.book_category
     DROP CONSTRAINT IF EXISTS fk_book_category_category;
 
-ALTER TABLE book_category
+ALTER TABLE public.book_category
     ADD CONSTRAINT fk_book_category_category
     FOREIGN KEY (category_id)
-    REFERENCES category(category_id);
+    REFERENCES public.category(category_id);
 
 
-ALTER TABLE book_genre
+ALTER TABLE public.book_genre
 ADD PRIMARY KEY (book_id, genre_id);--Adding Primary Key
 
-ALTER table book_genre
+ALTER table public.book_genre
 ADD CONSTRAINT fk_book_genre_book_id --Foreign key for the Book ID
 FOREIGN KEY (book_id)
-REFERENCES book(book_id);
+REFERENCES public.book(book_id);
 
-ALTER TABLE book_genre
+ALTER TABLE public.book_genre
 ADD CONSTRAINT fk_book_genre_genre_id --Foreign key for the Genre ID
 FOREIGN KEY (genre_id)
-REFERENCES genre(genre_id);
+REFERENCES public.genre(genre_id);
 
-ALTER TABLE category
+ALTER TABLE public.category
 DROP CONSTRAINT IF EXISTS fk_category_userid;
 
-ALTER TABLE category
+ALTER TABLE public.category
 ADD CONSTRAINT fk_category_userid
 FOREIGN KEY (user_id)
-REFERENCES app_user(user_id)
+REFERENCES public.app_user(user_id)
     ON DELETE CASCADE;
 
 -- add index's
 \echo 'Adding index''s.\n'
 -- Creates index on app_user.role_id for improved query performance when query the users role
-CREATE INDEX IF NOT EXISTS idx_app_user_role_id ON app_user(role_id);
+CREATE INDEX IF NOT EXISTS idx_app_user_role_id ON public.app_user(role_id);
 
 -- Creates index on app_user(last_name, first_name) for improved query performance when query the users full name.
 CREATE INDEX IF NOT EXISTS idx_app_user_last_first
-    ON app_user(last_name, first_name);
+    ON public.app_user(last_name, first_name);
 
 -- Creates index on author_name column in author table to improve query performance when searching by author name.
 CREATE INDEX IF NOT EXISTS idx_author_author_name
-    ON author (author_name);
+    ON public.author (author_name);
 
 -- Queries
 \echo '\nRunning queries \n'
@@ -7429,8 +7431,8 @@ SELECT
     u.last_name,
     u.email,
     r.role_name
-FROM app_user u
-         JOIN user_role r
+FROM public.app_user u
+         JOIN public.user_role r
               ON u.role_id = r.role_id
 ORDER BY u.last_name, u.first_name;
 
